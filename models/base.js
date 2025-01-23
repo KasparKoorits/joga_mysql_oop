@@ -31,7 +31,7 @@ class BaseSQLModel {
 
   async findOne(where, value) {
     const query = `SELECT * FROM ${this.tableName} WHERE ${where} = "${value}"`;
-    const result = await this.executeQuery(where, value);
+    const result = await this.executeQuery(query, value);
     return result[0];
   }
 
